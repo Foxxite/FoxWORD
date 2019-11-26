@@ -1,0 +1,17 @@
+{
+  "name": "foxword",
+  "version": "1.0.0",
+  "description": "A feature rich opensource password manager.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Foxxite",
+  "devDependencies": {
+    "electron": "^4.0.4"
+  },
+  "dependencies": {
+    "asar": "^1.0.0"
+  }
+}

@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "asar": "^1.0.0",
+    "crypto-js": "^3.1.9-1",
     "electron-reload": "^1.5.0",
     "jquery": "^3.4.1"
   }

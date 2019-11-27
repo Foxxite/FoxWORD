@@ -1,0 +1,9 @@
+*
+{
+	font-family: 'Nunito', sans-serif;
+}
+
+.col-4
+{
+	background: linear-gradient(120deg, #ff9100 0%,#f03800 100%);
+}

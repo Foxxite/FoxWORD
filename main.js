@@ -1,43 +1,52 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, session} = require('electron')
+require('electron-reload')(__dirname);
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
 function createWindow () {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-	titleBarStyle: 'hiddenInset',
-	backgroundColor: '#FFF',
-	show: true,
-    webPreferences: {
-      nodeIntegration: true
-    }
-  })
-  
-  mainWindow.setMenuBarVisibility(false)
+	
+	session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+		callback({ responseHeaders: Object.assign({
+			"Content-Security-Policy": [ "default-src, unsafe-inline, 'self'" ]
+		}, details.responseHeaders)});
+	})
+	
+	// Create the browser window.
+	mainWindow = new BrowserWindow({
+		width: 1280,
+		height: 720,
+		icon: __dirname + '/assets/img/fox.png',
+		titleBarStyle: 'hiddenInset',
+		backgroundColor: '#FFF',
+		show: true,
+		webPreferences: {
+		  nodeIntegration: true
+		}
+	})
 
-  // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+	mainWindow.setMenuBarVisibility(false)
 
-  // Open the DevTools.
-  //mainWindow.webContents.openDevTools()
+	// and load the index.html of the app.
+	mainWindow.loadFile('index.html')
 
-  //Show window when ready
-  mainWindow.once('ready-to-show', () => {
-	mainWindow.show()
-  })
-  
-  // Emitted when the window is closed.
-  mainWindow.on('closed', function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null
-  })
+	// Open the DevTools.
+	//mainWindow.webContents.openDevTools()
+
+	//Show window when ready
+	mainWindow.once('ready-to-show', () => {
+		mainWindow.show()
+	})
+
+	// Emitted when the window is closed.
+	mainWindow.on('closed', function () {
+		// Dereference the window object, usually you would store windows
+		// in an array if your app supports multi windows, this is the time
+		// when you should delete the corresponding element.
+		mainWindow = null
+	})
 }
 
 // This method will be called when Electron has finished

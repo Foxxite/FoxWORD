@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>FoxWORD | Password Manager</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+	<head>
+		<meta charset="UTF-8">
+		<title>FoxWORD | Password Manager</title>
 
-    <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
-    </script>
-  </body>
+		<!-- JQuery -->
+		<script>let $ = require('jquery'); window.jQuery = $;</script>
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="assets/fonts/nunito.css">
+		<link rel="stylesheet" href="assets/css/main.css">
+
+	</head>
+	
+	<body>
+		
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-4">
+				
+					<img id="logo" class="img-fluid" src="assets/img/fox.svg">
+				
+				</div>
+				<div class="col-8">
+				
+					<h1>Hello World!</h1>
+					<!-- All of the Node.js APIs are available in this renderer process. -->
+					We are using Node.js <script>document.write(process.versions.node)</script>,
+					Chromium <script>document.write(process.versions.chrome)</script>,
+					and Electron <script>document.write(process.versions.electron)</script>.
+					<script>document.write(__dirname + '/assets/img/fox.svg',);</script>
+				
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			// You can also require other files to run in this process
+			require('./renderer.js')
+		</script>
+	</body>
+	
 </html>

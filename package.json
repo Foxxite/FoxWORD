@@ -12,6 +12,8 @@
     "electron": "^4.0.4"
   },
   "dependencies": {
-    "asar": "^1.0.0"
+    "asar": "^1.0.0",
+    "electron-reload": "^1.5.0",
+    "jquery": "^3.4.1"
   }
 }

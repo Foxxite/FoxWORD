@@ -49,6 +49,11 @@ $text-color-alt: #fff;
 $text-color-disabled: #6c757d;
 
 /* Page Content */
+*
+{
+    font-family: 'Nunito', sans-serif;
+}
+
 html
 {
     overflow-x: hidden;
@@ -59,9 +64,10 @@ html
     }
 }
 
-*
+body
 {
-    font-family: 'Nunito', sans-serif;
+    background-color: $theme-color-menu;
+    transition: background-color 0.5s ease;
 }
 
 .navbar

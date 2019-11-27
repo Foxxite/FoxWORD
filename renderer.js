@@ -14,25 +14,16 @@ $(document).ready(function() {
 	
 	console.log(app.getPath('userData'));
 
+	//Show firts load animations
+	$(".navbar").hide();
+	$(".navside").hide();
+
+	$(".navbar").show("drop", { direction: 'up', mode: 'show' }, 500);
+	$(".navside").show("drop", { direction: 'left', mode: 'show' }, 500);
+	setTimeout(function () { $("body").css("background-color", "white"); }, 200);
+
 	//Render Dynamic Launch Content
 	$("#version").html("<i class='fas fa-code-branch'></i> Version: " + app.getVersion());
-
-	//Main App Logic
-	$("#logo_nav").click(function() {
-
-		$(".navside").toggle("drop", { direction: 'left', mode: 'toggle' }, 500);
-		
-		if($(".navside").visible())
-		{
-			$(".main-content").css("left", "0px");
-		}
-		else
-		{
-			$(".main-content").css("left", "150px");
-		}
-
-	});
-
 
 	//Insert logic to load right page on first start
 	$.get('pages/home.html')

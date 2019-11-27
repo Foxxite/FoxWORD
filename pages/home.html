@@ -1,0 +1,19 @@
+<h1>Hello World!</h1>
+<!-- All of the Node.js APIs are available in this renderer process. -->
+<p>
+    We are using Node.js <span id="node"></span>,
+    Chromium <span id="chrome"></span>
+    and Electron <span id="electron"></span>.
+    <span id="logo"></span>
+
+    <i class="anic" data-icon="upload"></i>
+</p>
+
+<script>
+
+    $("#node").text(process.versions.node);
+    $("#chrome").text(process.versions.chrome);
+    $("#electron").text(process.versions.electron);
+    $("#logo").text(__dirname + '/assets/img/fox.svg');
+
+</script>

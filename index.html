@@ -2,10 +2,13 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 		<title>FoxWORD | Password Manager</title>
 
 		<!-- JQuery -->
 		<script>let $ = require('jquery'); window.jQuery = $;</script>
+		<script>require('jquery-ui-dist/jquery-ui')</script>
 
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
@@ -23,25 +26,50 @@
 	
 	<body>
 		
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-4">
-				
-					<img id="logo" class="img-fluid" src="assets/img/fox.svg">
-				
-				</div>
-				<div class="col-8">
-				
-					<h1>Hello World!</h1>
-					<!-- All of the Node.js APIs are available in this renderer process. -->
-					We are using Node.js <script>document.write(process.versions.node)</script>,
-					Chromium <script>document.write(process.versions.chrome)</script>,
-					and Electron <script>document.write(process.versions.electron)</script>.
-					<script>document.write(__dirname + '/assets/img/fox.svg',);</script>
-				
-					<i class="anic" data-icon="upload"></i>
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand" href="#"><img id="logo_nav" height="32px" src="assets/img/fox_shadow.png"></a>
 
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Features</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Pricing</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container-fluid" id="main-content">
+			<div class="row">
+				<div class="col-2 navside">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">Active</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Link</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Link</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled" href="#">Disabled</a>
+						</li>
+					</ul>
 				</div>
+				<div class="col-10" id="content"></div>
 			</div>
 		</div>
 		

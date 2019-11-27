@@ -1,3 +1,4 @@
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 7.5px;
   height: 5px;
@@ -38,6 +39,8 @@
   background: transparent;
 }
 
+/* Vars */
+/* Page Content */
 html {
   overflow-x: hidden;
   overflow-y: hidden;
@@ -56,10 +59,33 @@ html:hover {
 }
 
 #main-content .navside {
-  min-height: calc(100vh - 60px);
-  background-color: #3d3d3d;
+  min-height: calc(100vh - 59px);
+  background-color: #3e3e3e;
   padding-top: 10px;
   padding-right: 10px;
   padding-left: 0px;
+}
+
+#main-content .navside a[href] {
+  color: #fff;
+}
+
+#main-content .navside a[href].disabled {
+  color: #6c757d !important;
+}
+
+#main-content .navside a[href]:hover {
+  color: #fdad44;
+}
+
+#main-content .navside #version {
+  position: absolute;
+  bottom: 5px;
+  padding-left: 15px;
+  color: #6c757d;
+}
+
+#main-content #content {
+  padding-top: 10px;
 }
 /*# sourceMappingURL=main.css.map */

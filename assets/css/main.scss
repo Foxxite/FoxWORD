@@ -1,3 +1,4 @@
+/* Scrollbar */
 ::-webkit-scrollbar
 {
     width: 7.5px;
@@ -39,6 +40,15 @@
     background: transparent;
 }
 
+/* Vars */
+$theme-color: #ff531f;
+$theme-color-secondary: #fdad44;
+$theme-color-menu: #3e3e3e;
+$text-color: #000;
+$text-color-alt: #fff;
+$text-color-disabled: #6c757d;
+
+/* Page Content */
 html
 {
     overflow-x: hidden;
@@ -56,18 +66,44 @@ html
 
 .navbar
 {
-    background: linear-gradient(160deg, #ff531f 60%, #fdad44 100%);
+    background: linear-gradient(160deg, $theme-color 60%, $theme-color-secondary 100%);
 }
 
 #main-content
 {
     .navside
     {
-        min-height: calc(100vh - 60px);
-        background-color: #3d3d3d;
+        min-height: calc(100vh - 59px);
+        background-color: $theme-color-menu;
         padding-top: 10px;
         padding-right: 10px;
         padding-left: 0px;
+
+        a[href]
+        {
+            color: $text-color-alt;
+            &.disabled
+            {
+                color: $text-color-disabled !important; 
+            }
+            &:hover
+            {
+                color: $theme-color-secondary;
+            }
+        }
+
+        #version
+        {
+            position: absolute;
+            bottom: 5px;
+            padding-left: 15px;
+            color: $text-color-disabled;
+        }
+    }
+
+    #content
+    {
+        padding-top: 10px;
     }
 
 }

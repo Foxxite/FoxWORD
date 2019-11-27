@@ -14,6 +14,9 @@ $(document).ready(function() {
 	
 	console.log(app.getPath('userData'));
 
+	//Render Dynamic Launch Content
+	$("#version").html("<i class='fas fa-code-branch'></i> Version: " + app.getVersion());
+
 	//Main App Logic
 	$("#logo_nav").click(function() {
 
@@ -32,7 +35,6 @@ $(document).ready(function() {
 
 
 	//Insert logic to load right page on first start
-
 	$.get('pages/home.html')
 	.done(function(data) {
 		$("#content").show("drop", { direction: 'right', mode: 'show' }, 500);

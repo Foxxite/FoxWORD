@@ -61,7 +61,9 @@ body {
 }
 
 .navbar {
-  background: linear-gradient(160deg, #ff531f 60%, #fdad44 100%);
+  background-image: url(../img/wallpaper.png);
+  background-position: center;
+  background-attachment: fixed;
 }
 
 #main-content .navside {

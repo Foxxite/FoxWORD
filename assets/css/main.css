@@ -64,6 +64,7 @@ body {
   background-image: url(../img/wallpaper.png);
   background-position: center;
   background-attachment: fixed;
+  background-size: cover;
 }
 
 #main-content .navside {

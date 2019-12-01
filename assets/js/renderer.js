@@ -3,9 +3,10 @@
 // All of the Node.js APIs are available in this process.
 
 //Setting up all required JS files
-const { remote, BrowserWindow } = require('electron')
+const { remote, BrowserWindow, shell } = require('electron')
 const app = remote.app;
 const currentWindow = remote.getCurrentWindow()
+const basePath = app.getPath('userData') + "/databases/database.foxword";
 
 const fs = require('fs')
 
@@ -16,11 +17,14 @@ $(document).ready(function() {
 	
 	console.log(app.getPath('userData'));
 
+	//Setup right event handlers
+	$(document).on('click', 'a[href^="http"]', function(event) {
+        event.preventDefault();
+        shell.openExternal(this.href);
+    });
+
 	//Figure Out If First Launch & Decrypt Database
-
-	const basePath = app.getPath('userData');
-
-	fs.access(basePath + "/databases/database.foxword", fs.F_OK, (err) => {
+	fs.access(basePath, fs.F_OK, (err) => {
 		if (err) {
 			setupNewUser();
 		}
@@ -60,17 +64,17 @@ function setupNewUser()
 		if (textStatus == 'error')
 			errorMessage = textStatus + " " + errorThrown;
 
-		$("#content").html("<h1>An internal error occurred.</h1><h3>"+errorMessage+"</h3>");
+		$("body").html("<h1>An internal error occurred.</h1><h3>"+errorMessage+"</h3>");
 	});
 }
 
 function setupUser()
 {
 	//Insert logic to load right page on first start
-	$.get('pages/home.html')
+	$.get('pages/main.html')
 	.done(function(data) {
-		$("#content").show("drop", { direction: 'right', mode: 'show' }, 500);
-		$("#content").html(data);
+		$("body").show("drop", { direction: 'right', mode: 'show' }, 500);
+		$("body").html(data);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) {
 		var errorMessage;
@@ -81,6 +85,6 @@ function setupUser()
 		if (textStatus == 'error')
 			errorMessage = textStatus + " " + errorThrown;
 
-		$("#content").html("<h1>An internal error occurred.</h1><h3>"+errorMessage+"</h3>");
+		$("body").html("<h1>An internal error occurred.</h1><h3>"+errorMessage+"</h3>");
 	});
 }

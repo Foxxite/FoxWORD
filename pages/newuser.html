@@ -1,11 +1,12 @@
 <link rel="stylesheet" href="assets/css/setup.css">
 
 <!-- First Setup Action Selector -->
-<div class="container text-center pt-5 pb-5">
+<div class="container text-center pt-5 pb-5" id="firstaction">
     <div class="row">
         <div class="col-12">
             <h1>Welcome to FoxWORD <span id="username"></span>!</h1>
             <h2>Follow the onscreen steps to get you up and running.</h2>
+            <a href="https://foxxite.com">Foxxite</a>
         </div>
     </div>
     <div class="row">
@@ -30,12 +31,34 @@
     </div>
     <div class="row">
         <div class="col-12 pt-2">
-            <img src="assets/img/fox_shadow.png" height="256px">
+            <img src="assets/img/fox_shadow_body_center.png" height="256px">
         </div>
     </div>
 </div>
 <input id="databaseFile" type="file" class="d-none" accept=".foxword">
 
+<div class="container text-center pt-5 pb-5" id="setupnew">
+    <div class="row">
+        <div class="col-12">
+            <h1>Pick a password for your database.</h1>
+            <h2>Make sure that it's secure and that you can remember it.</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center pt-5 pb-5" id="setupdb">
+    <div class="row">
+        <div class="col-12">
+            <h1>Creating Database...</h1>
+            <h2>FoxWORD will restart automatically.</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 align-items-center">
+            <div class="triple-spinner"></div>
+        </div>
+    </div>
+</div>
 
 <script>
     require('./assets/js/setup.js')

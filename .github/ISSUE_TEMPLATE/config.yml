@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Foxxite Twitter
+    url: https://twitter.com/foxxite
+    about: Please ask and answer questions here.
+- name: Security Bugs
+    url: mailto:foxxite@foxxite.com
+    about: Please report security vulnerabilities here.

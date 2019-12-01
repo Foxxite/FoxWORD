@@ -7,3 +7,28 @@ body
 
     color: white;
 }
+
+.setup-card
+{
+    margin: 15px;
+    padding: 5px;
+    border-radius: 0.25em;
+    border: 3px solid white;
+
+    transition: all 0.2s ease;
+
+    svg
+    {
+        font-size: 72px;
+    }
+
+    &:hover
+    {
+        transform: scale(1.2);
+        color: black;
+        background-color: white;
+        box-shadow: 5px 5px 10px black;
+        cursor: pointer;
+    }
+
+}

@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 	const basePath = app.getPath('userData');
 
-	fs.access(basePath + "/database.foxword", fs.F_OK, (err) => {
+	fs.access(basePath + "/databases/database.foxword", fs.F_OK, (err) => {
 		if (err) {
 			setupNewUser();
 		}
@@ -30,8 +30,7 @@ $(document).ready(function() {
 		}
 	})
 
-
-	//Show firts load animations
+	//Show first load animations
 	$(".navbar").hide();
 	$(".navside").hide();
 
@@ -61,7 +60,7 @@ function setupNewUser()
 		if (textStatus == 'error')
 			errorMessage = textStatus + " " + errorThrown;
 
-		$("#content").html("<h1>An internal error occured.</h1><h3>"+errorMessage+"</h3>");
+		$("#content").html("<h1>An internal error occurred.</h1><h3>"+errorMessage+"</h3>");
 	});
 }
 
@@ -82,6 +81,6 @@ function setupUser()
 		if (textStatus == 'error')
 			errorMessage = textStatus + " " + errorThrown;
 
-		$("#content").html("<h1>An internal error occured.</h1><h3>"+errorMessage+"</h3>");
+		$("#content").html("<h1>An internal error occurred.</h1><h3>"+errorMessage+"</h3>");
 	});
 }

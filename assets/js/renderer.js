@@ -56,15 +56,7 @@ function setupNewUser()
 		$("body").show("drop", { direction: 'up', mode: 'show' }, 500);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) {
-		var errorMessage;
-
-		if (textStatus == 'timeout')
-			errorMessage = 'The server is not responding';
-
-		if (textStatus == 'error')
-			errorMessage = textStatus + " " + errorThrown;
-
-		$("body").html("<h1>An internal error occurred.</h1><h3>"+errorMessage+"</h3>");
+		displayAjaxError(jqXHR, textStatus, errorThrown);
 	});
 }
 
@@ -77,14 +69,19 @@ function setupUser()
 		$("body").html(data);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) {
-		var errorMessage;
-
-		if (textStatus == 'timeout')
-			errorMessage = 'The server is not responding';
-
-		if (textStatus == 'error')
-			errorMessage = textStatus + " " + errorThrown;
-
-		$("body").html("<h1>An internal error occurred.</h1><h3>"+errorMessage+"</h3>");
+		displayAjaxError(jqXHR, textStatus, errorThrown);
 	});
+}
+
+function displayAjaxError(jqXHR, textStatus, errorThrown)
+{
+	var errorMessage;
+
+	if (textStatus == 'timeout')
+		errorMessage = 'An IO operation timed out!';
+
+	if (textStatus == 'error')
+		errorMessage = textStatus + " " + errorThrown;
+
+	$("body").html("<h1>An internal error occurred.</h1><h3>"+errorMessage+"</h3>");
 }

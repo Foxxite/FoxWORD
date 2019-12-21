@@ -10,7 +10,7 @@ function createWindow () {
 	
 	session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
 		callback({ responseHeaders: Object.assign({
-			"Content-Security-Policy": [ "default-src, unsafe-inline, 'self'" ]
+			"Content-Security-Policy": [ "default-src, 'self'" ]
 		}, details.responseHeaders)});
 	})
 	

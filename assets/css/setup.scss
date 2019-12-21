@@ -8,6 +8,24 @@ body
     color: white;
 }
 
+#bckbtn
+{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 32px;
+    color: white;
+
+    transition: all 0.2s ease;
+
+    &:hover
+    {
+        transform: rotate(-45deg) scale(1.2);
+        cursor: pointer;
+    }
+
+}
+
 .setup-card
 {
     margin: 15px;
@@ -32,3 +50,4 @@ body
     }
 
 }
+

@@ -1,16 +1,18 @@
 <link rel="stylesheet" href="assets/css/setup.css">
 
+<!-- Reset Choice Button -->
+<div id="bckbtn"><i class="fas fa-arrow-circle-left"></i></div>
+
 <!-- First Setup Action Selector -->
 <div class="container text-center pt-5 pb-5" id="firstaction">
     <div class="row">
         <div class="col-12">
             <h1>Welcome to FoxWORD <span id="username"></span>!</h1>
             <h2>Follow the onscreen steps to get you up and running.</h2>
-            <a href="https://foxxite.com">Foxxite</a>
         </div>
     </div>
     <div class="row">
-        <div class="col-6" id="new">
+        <div class="col-12 col-xl-6" id="new">
             <div class="setup-card">
                 <i class="fas fa-folder-plus"></i>
                 <h3>Create FoxWORD Database</h3>
@@ -19,7 +21,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-6" id="import">
+        <div class="col-12 col-xl-6" id="import">
             <div class="setup-card">
                 <i class="fas fa-folder-open"></i>
                 <h3>Import FoxWORD Database</h3>
@@ -30,7 +32,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 pt-2">
+        <div class="col-12 pt-3">
             <img src="assets/img/fox_shadow_body_center.png" height="256px">
         </div>
     </div>
@@ -42,6 +44,30 @@
         <div class="col-12">
             <h1>Pick a password for your database.</h1>
             <h2>Make sure that it's secure and that you can remember it.</h2>
+            <h6>If this password is lost, there is no way to recover the database.</h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-xl-6 offset-xl-3">
+            <form class="form">
+                <div class="form-group">
+                    <label>Master Password:</label>
+                    <div class="input-group">
+                        <input class="form-control" type="password" name="pass1">
+                        <meter max="4" id="password-strength-meter"></meter>
+                    </div>
+                    <p id="password-strength-text"></p>
+                </div>
+                <div class="form-group">
+                    <label>Verify Master Password:</label>
+                    <div class="input-group">
+                        <input class="form-control" type="password" name="pass2">
+                    </div>
+                </div>     
+                <div class="form-group">
+                    <input class="btn btn-primary" type="button" name="creatdb" value="Create Database">
+                </div>   
+            </form>
         </div>
     </div>
 </div>

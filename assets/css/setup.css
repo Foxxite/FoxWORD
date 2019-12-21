@@ -6,6 +6,22 @@ body {
   color: white;
 }
 
+#bckbtn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 32px;
+  color: white;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+#bckbtn:hover {
+  -webkit-transform: rotate(-45deg) scale(1.2);
+          transform: rotate(-45deg) scale(1.2);
+  cursor: pointer;
+}
+
 .setup-card {
   margin: 15px;
   padding: 5px;

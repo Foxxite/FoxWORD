@@ -5,7 +5,9 @@ var fs = require('fs');
 const basePath = app.getPath('userData') + "/databases";
 const databaseName = "/database.foxword";
 
-let username = process.env.username || process.env.user;
+const username = process.env.username || process.env.user;
+
+const viewPass = require('./showpassword.js');
 
 //Dropbox Password Strength Lib
 var zxcvbn = require('zxcvbn');

@@ -31,7 +31,7 @@ body {
   transition: all 0.2s ease;
 }
 
-.setup-card svg {
+.setup-card .fas, .setup-card .fab {
   font-size: 72px;
 }
 

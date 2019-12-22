@@ -52,16 +52,22 @@
             <form class="form">
                 <div class="form-group">
                     <label>Master Password:</label>
-                    <div class="input-group">
-                        <input class="form-control" type="password" name="pass1">
+                    <div class="input-group w-100">
+                        <input data-toggle="password" class="form-control" type="password" name="pass1">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-eye"></i></span>
+                        </div>
                         <meter max="4" id="password-strength-meter"></meter>
                     </div>
                     <p id="password-strength-text"></p>
                 </div>
                 <div class="form-group">
                     <label>Verify Master Password:</label>
-                    <div class="input-group">
-                        <input class="form-control" type="password" name="pass2">
+                    <div class="input-group w-100">
+                        <input data-toggle="password" class="form-control" type="password" name="pass2">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-eye"></i></span>
+                        </div>
                     </div>
                 </div>     
                 <div class="form-group">

@@ -44,9 +44,22 @@ $(document).ready(function () {
 
     /* #region New Database */
 
+    $("#new").click(function () {
+
+        $("#firstaction").hide("drop", { direction: 'left', mode: 'hide' }, 500, function () {
+            $("#bckbtn").show();
+            $("#setupnew").show("drop", { direction: 'right', mode: 'show' }, 500, function () { });
+        });
+
+    });
+
     var password = $('input[name="pass1"]');
     var meter = $('#password-strength-meter');
     var text = $('#password-strength-text');
+
+    var canContinueStrength = false;
+    var canContinueMatch = false;
+    var continueError = "";
 
     password.keyup(function () { 
 
@@ -66,16 +79,58 @@ $(document).ready(function () {
             text.html("");
         }
 
+        //update the button
+        if(result.score >= 3)
+        {
+            canContinueStrength = true;
+        }
+        else
+        {
+            canContinueStrength = false;
+            continueError = "The password does not match the minium required strength.";
+        }
+
     });
 
-    $("#new").click(function () {
+    $("input[name='pass2']").keyup(function() {
 
-        $("#firstaction").hide("drop", { direction: 'left', mode: 'hide' }, 500, function () {
-            $("#bckbtn").show();
-            $("#setupnew").show("drop", { direction: 'right', mode: 'show' }, 500, function () { });
-        });
+        if($(this).val() == password.val())
+        {
+            canContinueMatch = true;
+        }
+        else
+        {
+            canContinueMatch = false;
+            continueError = "The passwords do not match.";
+        }
 
     });
+
+    $("#setupnew form").change(function() { updateContinueButton() });
+
+    $("#setupnew form").keyup(function() { updateContinueButton() });
+
+    function updateContinueButton()
+    {
+        if(canContinueStrength == true && canContinueMatch == true)
+        {
+            $("[name='createdb']").removeClass("disabled");
+
+            $("[name='createdb']").addClass("btn-primary");
+            $("[name='createdb']").removeClass("btn-warning");
+
+            $("[name='createdb']").val("Create Database");
+        }
+        else
+        {
+            $("[name='createdb']").addClass("disabled");
+
+            $("[name='createdb']").addClass("btn-warning");
+            $("[name='createdb']").removeClass("btn-primary");
+
+            $("[name='createdb']").val(continueError);
+        }
+    }
 
     $("#create").click(function () {
 

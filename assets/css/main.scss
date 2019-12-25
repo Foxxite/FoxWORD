@@ -70,6 +70,11 @@ body
     transition: background-color 0.5s ease;
 }
 
+p,h1,h2,h3,h4,h5,h6,label
+{
+    user-select: none;
+}
+
 .navbar
 {
     background-image: url(../img/wallpaper.png);

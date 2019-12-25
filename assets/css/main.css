@@ -60,6 +60,13 @@ body {
   transition: background-color 0.5s ease;
 }
 
+p, h1, h2, h3, h4, h5, h6, label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 .navbar {
   background-image: url(../img/wallpaper.png);
   background-position: center;

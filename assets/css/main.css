@@ -185,18 +185,22 @@ meter::-webkit-meter-bar {
 }
 
 meter[value="1"]::-webkit-meter-optimum-value {
-  background: red;
+  background: -webkit-gradient(linear, left top, right top, from(black), to(#ff3c00));
+  background: linear-gradient(90deg, black 0%, #ff3c00 100%);
 }
 
 meter[value="2"]::-webkit-meter-optimum-value {
-  background: yellow;
+  background: -webkit-gradient(linear, left top, right top, from(black), color-stop(50%, #ff3c00), to(orange));
+  background: linear-gradient(90deg, black 0%, #ff3c00 50%, orange 100%);
 }
 
 meter[value="3"]::-webkit-meter-optimum-value {
-  background: orange;
+  background: -webkit-gradient(linear, left top, right top, from(black), color-stop(33%, #ff3c00), color-stop(66%, orange), color-stop(99%, yellow));
+  background: linear-gradient(90deg, black 0%, #ff3c00 33%, orange 66%, yellow 99%);
 }
 
 meter[value="4"]::-webkit-meter-optimum-value {
-  background: lime;
+  background: -webkit-gradient(linear, left top, right top, from(black), color-stop(25%, #ff3c00), color-stop(50%, orange), color-stop(75%, yellow), to(#05ff00));
+  background: linear-gradient(90deg, black 0%, #ff3c00 25%, orange 50%, yellow 75%, #05ff00 100%);
 }
 /*# sourceMappingURL=main.css.map */

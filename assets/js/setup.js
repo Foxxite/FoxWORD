@@ -46,9 +46,9 @@ $(document).ready(function () {
 
     $("#new").click(function () {
 
-        $("#firstaction").hide("drop", { direction: 'left', mode: 'hide' }, 500, function () {
+        $("#firstaction").hide("drop", { direction: 'right', mode: 'hide' }, 500, function () {
             $("#bckbtn").show();
-            $("#setupnew").show("drop", { direction: 'right', mode: 'show' }, 500, function () { });
+            $("#setupnew").show("drop", { direction: 'left', mode: 'show' }, 500, function () { });
         });
 
     });
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
     var canContinueStrength = false;
     var canContinueMatch = false;
-    var continueError = "";
+    var continueError = {"strength": false, "match": false};
 
     password.keyup(function () { 
 
@@ -83,11 +83,12 @@ $(document).ready(function () {
         if(result.score >= 3)
         {
             canContinueStrength = true;
+            continueError.strength = true;
         }
         else
         {
             canContinueStrength = false;
-            continueError = "The password does not match the minium required strength.";
+            continueError.strength = false;
         }
 
     });
@@ -97,11 +98,13 @@ $(document).ready(function () {
         if($(this).val() == password.val())
         {
             canContinueMatch = true;
+            continueError.match = true;
         }
         else
         {
             canContinueMatch = false;
-            continueError = "The passwords do not match.";
+            continueError.match = false;
+            continueError.push("");
         }
 
     });
@@ -128,11 +131,30 @@ $(document).ready(function () {
             $("[name='createdb']").addClass("btn-warning");
             $("[name='createdb']").removeClass("btn-primary");
 
-            $("[name='createdb']").val(continueError);
+            var output = "";
+
+            
+            if(!continueError.strength && !continueError.match)
+            {
+                output = "The password does not match the minium required strength level and the passwords do not match.";
+            }
+            else if(!continueError.strength && continueError.match)
+            {
+                output = "The password does not match the minium required strength level.";
+            }
+            if(continueError.strength && !continueError.match)
+            {
+                output = "The passwords do not match.";
+            }
+
+
+            $("[name='createdb']").val(output);
         }
     }
 
     $("#create").click(function () {
+
+        alert("clickable");
 
         if (!fs.existsSync(basePath)) {
             fs.mkdirSync(basePath);

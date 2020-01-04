@@ -40,6 +40,12 @@
     background: transparent;
 }
 
+/* Fix Bootstrap Issues */
+.btn
+{
+    white-space: normal;
+}
+
 /* Vars */
 $theme-color: #ff531f;
 $theme-color-secondary: #fdad44;

@@ -39,6 +39,11 @@
   background: transparent;
 }
 
+/* Fix Bootstrap Issues */
+.btn {
+  white-space: normal;
+}
+
 /* Vars */
 /* Page Content */
 * {

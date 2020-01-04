@@ -9,6 +9,7 @@ const currentWindow = remote.getCurrentWindow()
 const basePath = app.getPath('userData') + "/databases/database.foxword";
 
 const fs = require('fs')
+const common = require('./common.js');
 
 $("#content").hide();
 

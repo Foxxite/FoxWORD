@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "Foxxite",
   "devDependencies": {
-    "electron": "^4.0.4"
+    "electron": "^7.2.4"
   },
   "dependencies": {
     "asar": "^1.0.0",
